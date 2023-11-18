@@ -1,3 +1,4 @@
+
 export const FETCH_RESTAURANTS =
   "https://gofoodsserver.onrender.com/api/restaurants/?lat=12.9715987&lng=77.5945627";
 
