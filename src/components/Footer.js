@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <div className="footer">
       <p data-testid="footer-logo" className="paragraph colwhite">
-       Tasty Treats
+        Tasty Treats
       </p>
       <p className="paragraph colwhite">
         Developed by Team Geeky Nerdz{" "}
