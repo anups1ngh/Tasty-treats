@@ -9,7 +9,7 @@ const Footer = () => {
       </p>
       <p className="paragraph colwhite">
         Developed by Team Geeky Nerdz{" "}
-        <a href="https://github.com/anups1ngh">
+        <a href="https://github.com/anups1ngh/Tasty-treats/tree/main">
           {" "}
           <FiGithub color="white" size="1rem" to="/about" />{" "}
         </a>

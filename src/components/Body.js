@@ -44,7 +44,9 @@ const Body = () => {
         const response = await fetch(restaurantUrl);
         const json = await response.json();
         console.log(json);
-        if(json?.data?.cards[0]?.card?.card?.title === "Location Unserviceable"){
+        if (
+          json?.data?.cards[0]?.card?.card?.title === "Location Unserviceable"
+        ) {
           setError(true);
           return;
         }
@@ -90,8 +92,8 @@ const Body = () => {
       </h2>
     );
   }
-  if(error){
-    return <ServiceUnreachable />
+  if (error) {
+    return <ServiceUnreachable />;
   }
 
   return allRestaurants?.length === 0 ? (
@@ -117,9 +119,7 @@ const Body = () => {
         <>
           {" "}
           {categoryMenu && <CategoryMenu categoryMenu={categoryMenu} />}
-          <h1 className="main-content-text">
-            {address}
-          </h1>
+          <h1 className="main-content-text">{address}</h1>
           <div className="restaurant-lists">
             {filteredRestaurants.map((restaurant) => (
               <Link
