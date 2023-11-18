@@ -83,10 +83,6 @@ const Body = () => {
             // update the state - restuarants
             setFilteredRestaurants(data);
           }}
-          onBlur={() => {
-            setFilteredRestaurants(allRestaurants);
-            setSearchText("");
-          }}
         />
       </div>
       {filteredRestaurants.length === 0 ? (
