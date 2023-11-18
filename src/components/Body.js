@@ -28,20 +28,26 @@ const Body = () => {
   const [categoryMenu, setCategoryMenu] = useState([]);
   const [searchText, setSearchText] = useState("");
   const [restaurantUrl, setRestaurantUrl] = useState(null);
+  const [address, setAddress] = useState("Can't Detect Location");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const userLocation = await getUserLocation();
         setRestaurantUrl(
-          `https://gofoodsserver.onrender.com/api/restaurants/?lat=${userLocation.lat}&lng=${userLocation.lng}`
+          // `https://gofoodsserver.onrender.com/api/restaurants/?lat=${userLocation.lat}&lng=${userLocation.lng}`
+          `https://gofoodsserver.onrender.com/api/restaurants/?lat=22.718684&lng=88.3530653`
         );
 
         const response = await fetch(restaurantUrl);
         const json = await response.json();
         console.log("json",json);
+        if (!response.ok) {
+          throw new Error(json?.error?.message);
+        }
         const resData = await checkJsonData(json);
-
+        const addr = json?.data?.cards[2].card.card.header.title;
+        setAddress(addr.replace("chains", ""));
         setCategoryMenu(
           json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.info
         );
@@ -103,7 +109,7 @@ const Body = () => {
           {" "}
           {categoryMenu && <CategoryMenu categoryMenu={categoryMenu} />}
           <h1 className="main-content-text">
-            Restaurants with online food delivery in {}
+            {address}
           </h1>
           <div className="restaurant-lists">
             {filteredRestaurants.map((restaurant) => (
