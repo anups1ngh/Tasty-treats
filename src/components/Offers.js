@@ -148,7 +148,7 @@ const Offers = () => {
                 </div>
                 {offers.map((offer) =>
                     offer.header !== "" && offer.subHeader !== "" ? (
-                        <div key={offer.id}>
+                        <div className="res-card" key={offer.id}>
                             <Link to={"/restaurant/" + offer.id} key={offer.id}>
                                 <OffersCard
                                     id={offer.id}
