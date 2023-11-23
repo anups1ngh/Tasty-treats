@@ -29,7 +29,7 @@ const Header = () => {
           <div className="nav-items">
             <ul>
               <li>
-                <NavLink to="/contact">Offers</NavLink>
+                <NavLink to="/offers">Offers</NavLink>
               </li>
 
               <li className="cart-logo">

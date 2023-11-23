@@ -23,6 +23,7 @@ import RestaurantDetails from "./components/RestaurantDetails";
 import Loader from "./components/Loader";
 import RestaurantCards from "./components/RestaurantCard";
 import CategoryDetails from "./components/CategoryDetails";
+import Offers from "./components/Offers";
 
 //lazy loading pages
 const About = lazy(() => import("./pages/About"));
@@ -90,6 +91,14 @@ const appRouter = createBrowserRouter([
         element: (
           <Suspense fallback={<Loader />}>
             <Checkout />
+          </Suspense>
+        ),
+      },
+      {
+        path: "/offers",
+        element: (
+          <Suspense fallback={<Loader />}>
+            <Offers />
           </Suspense>
         ),
       },
