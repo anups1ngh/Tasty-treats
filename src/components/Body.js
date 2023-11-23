@@ -37,8 +37,9 @@ const Body = () => {
       try {
         const userLocation = await getUserLocation();
         setRestaurantUrl(
-          `https://gofoodsserver.onrender.com/api/restaurants/?lat=${userLocation.lat}&lng=${userLocation.lng}`
+          // `https://gofoodsserver.onrender.com/api/restaurants/?lat=${userLocation.lat}&lng=${userLocation.lng}`
           // `https://gofoodsserver.onrender.com/api/restaurants/?lat=22.718684&lng=88.3530653`
+          "https://www.swiggy.com/dapi/restaurants/list/v5?lat=22.572646&lng=88.36389500000001&page_type=DESKTOP_WEB_LISTING"
         );
 
         const response = await fetch(restaurantUrl);
