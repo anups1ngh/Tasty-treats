@@ -1,9 +1,13 @@
-import { Link } from "react-router-dom";
-import "../../index.css";
-
-const NotFound = () => {
+const NotFound = (props) => {
+  const { setSearchText, setFilteredRestaurants, allRestaurants } = props;
   return (
     <div className="not-found">
+      <button className="search-btn" onClick={() => {
+        setSearchText("");
+        setFilteredRestaurants(allRestaurants);
+      }}>
+        Go Back
+      </button>
       <img
         src={require("../assets/img/error.jpg")}
         alt="Not Found"
@@ -11,9 +15,7 @@ const NotFound = () => {
       />
 
       <p className="error-text">Oops! Nothing Found here</p>
-      <button className="error-button">
-        <Link to="/">Back to Home</Link>
-      </button>
+
     </div>
   );
 };
