@@ -567,6 +567,7 @@
   align-items: center;
   justify-content: space-around;
   padding: 20px 25px;
+  position: absolute;
   bottom: 0;
   width: calc(100% - 50px);
   /* Adjusted width to account for padding */
