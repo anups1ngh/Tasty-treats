@@ -22,7 +22,7 @@ const getUserLocation = () => {
     );
   });
 };
-
+console.log("****** Test Log ******");
 const Body = () => {
   const [allRestaurants, setAllRestaurants] = useState([]);
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
